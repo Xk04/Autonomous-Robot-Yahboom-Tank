@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Panel</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/panel_sections.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!---JS-->
+    <script defer src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script defer src="{{ url_for('static', filename='js/Camera.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/DetectionFlow.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/Informations.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/App.js') }}"></script>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/tank_logo.png') }}">
+        <h1>Tank Panel</h1>
+    </header>
+    <main>
+        <div class="left">
+            <section class="stream">
+                <div class="camera-overlay">
+                    <p id="camera-status-indicator"></p>
+                    <p id="camera-label">Disconnected</p>
+                </div>
+                <img id="camera-feed" src="" alt="" class="camera-feed">
+            </section>
+
+            <section class="info">
+                <h2>Informations</h2>
+                <div>
+                    <li><p>Socket connection :&nbsp;</p><p class="info-result" id="connection">false</p></li>
+                    <li><p>Image Stream :&nbsp;</p><p class="info-result" id="image-flow">false</p></li>
+                    <li><p>Detection flow :&nbsp;</p><p class="info-result" id="detection-flow">false</p></li>
+                    <li><p>Proximity flow :&nbsp;</p><p class="info-result" id="proximity-flow">false</p></li>
+                    <li><p>Panel :&nbsp;</p><p class="info-result" id="panel">false</p></li>
+                </div>
+            </section>
+        </div>
+        <div class="right">
+            <section class="detection">
+                <h2>Recognized objects</h2>
+                <ol id="history">
+                </ol>
+                <p>No object found</p>
+            </section>
+
+            <div class="bottom-right">
+                <section class="controller">
+                    <button id="forward">&#9650;</button>
+                    <button id="left">&#9664;</button>
+                    <button id="right">&#9654;</button>
+                    <button id="back">&#9660;</button>
+                </section>
+
+                <section class="map">
+                    <h2>Proximity Map</h2>
+                </section>
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+        <a href="http://">Documentation</a>
+    </footer>
+</body>
+</html>

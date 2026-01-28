@@ -1,0 +1,90 @@
+/* === RESPONSIVE === */
+
+/* Large screens (1920px+) */
+@media (min-width: 1920px) {
+
+}
+
+/* Standard screens (1366px - 1919px) */
+@media (min-width: 1366px) and (max-width: 1919px) {
+    header h1 {
+        font-size: var(--text-size-xl);
+    }
+    
+    header img {
+        width: 3%;
+    }
+    
+    .info h2, .detection h2 {
+        font-size: var(--text-size-m);
+    }
+    
+    .controller button {
+        font-size: var(--text-size-l);
+    }
+}
+
+/* Medium screens (1024px - 1365px) */
+@media (min-width: 1024px) and (max-width: 1365px) {
+    header h1 {
+        font-size: var(--text-size-l);
+    }
+    
+    header img {
+        width: 4%;
+    }
+    
+    .info h2, .detection h2 {
+        font-size: var(--text-size-m);
+    }
+
+    .info p {
+        line-height: 0;
+    }
+    
+    .controller button {
+        font-size: var(--text-size-l);
+        width: 30%;
+    }
+    
+    .info, .detection {
+        padding: 0% 3%;
+    }
+}
+
+/* Small landscape screens (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    header h1 {
+        font-size: var(--text-size-m);
+    }
+    header img {
+        width: 4%;
+    }
+    
+    .info h2, .detection h2, .map h2 {
+        font-size: var(--text-size-s);
+    }
+    
+    .controller button {
+        font-size: var(--text-size-m);
+        width: 30%;
+    }
+    
+    .info, .detection {
+        padding: 0% 2%;
+    }
+
+    .info p {
+        line-height: 0;
+    }
+    
+    
+    .camera-overlay {
+        font-size: var(--text-size-s);
+    }
+    
+    #camera-status-indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
