@@ -1,0 +1,77 @@
+/* === Variables === */
+:root {
+    /* Warnings */
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+
+
+    /* Backgrounds */
+    --bg-1: #174dc4;
+    --bg-2: #000000;
+    --bg-3: #1582e8;
+    --bg-4: #36a4f1;
+    --bg-5: #87bcf8;
+    --bg-6: #094886;
+
+
+    /* Text */
+    --text-primary: #ffffff;
+    --text-secondary: #000000;
+    --text-font: "Roboto";
+
+    --text-size-xs: 0.5em;
+    --text-size-s: 1em;
+    --text-size-m: 1.5em;
+    --text-size-l: 2em;
+    --text-size-xl: 2.5em;
+    --text-size-xxl: 3em;
+    --text-size-3xl: 3.5em;
+
+    --text-height-s: 25%;
+    --text-height-m: 50%;
+    --text-height-l: 75%;
+    --text-height-xl: 100%;
+
+    --text-weight-xs: 200;
+    --text-weight-s: 300;
+    --text-weight-m: 400;
+    --text-weight-l: 500;
+    --text-weight-xl: 600;
+
+
+    /* Blocs */
+    --corner-angle: 18px;
+    --shadow: 0px 0px 12px 8px rgba(0,0,0,0.1);
+    --bloc-gap: 15px;
+
+
+    /* Controller */
+    --controller-button-size: 50%;
+    --btn-pos1: 15%;
+    --btn-pos2: 50%;
+
+
+}
+
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Robot.ttf");
+}
+
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

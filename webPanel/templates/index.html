@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Panel</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/panel_sections.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!---JS-->
+    <script defer src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script defer src="{{ url_for('static', filename='js/Minimap.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/Camera.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/Motors.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/DetectionFlow.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/Informations.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/App.js') }}"></script>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/tank_logo.png') }}">
+        <h1>Tank Panel</h1>
+    </header>
+    <main>
+        <div class="left">
+            <section class="stream">
+                <div class="camera-overlay">
+                    <p id="camera-status-indicator"></p>
+                    <p id="camera-label">Disconnected</p>
+                </div>
+                <img id="camera-feed" src="" alt="" class="camera-feed">
+            </section>
+
+            <section class="info">
+                <h2>Informations</h2>
+                <table>
+                    <tr>
+                        <td>Panel :&nbsp;<span class="info-result" id="panel">false</span></td>
+                        <td>Socket connection :&nbsp;<span class="info-result" id="connection">false</span></td>
+                    </tr>
+                    <tr>    
+                        <td>Motors initialization:&nbsp;<span class="info-result" id="motors-info">false</span></td>
+                        <td>Detection flow :&nbsp;<span class="info-result" id="detection-flow">false</span></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Image stream :&nbsp;<span class="info-result" id="image-flow">false</span></td>
+                        <td>Proximity flow :&nbsp;<span class="info-result" id="proximity-flow">false</span></td>
+                    </tr>
+                    <tr>
+                        <td>Minimap loaded :&nbsp;<span class="info-result" id="minimap-info">false</span></td>
+                    </tr>
+                </table>
+                    
+                    
+            </section>
+        </div>
+        <div class="right">
+            <section class="detection">
+                <h2>Recognized objects</h2>
+                <ol id="history">
+                </ol>
+                <p>No object found</p>
+            </section>
+
+            <div class="bottom-right">
+                
+                <section class="map">
+                    <h2>Proximity Map</h2>
+                    <canvas id="minimap-canvas" width="300" height="300"></canvas>
+                    <div class="minimap-legend">
+                        <span class="legend-item">
+                            <span class="legend-color robot"></span> Tank
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color obstacle"></span> Obstacles
+                        </span>
+                    </div>
+                </section>
+                
+                <section class="controller">
+                    <span></span>
+                    <button id="forward">&#9650;</button>
+                    <span></span>
+                    <button id="turn-left">&#9664;</button>
+                    <button id="brake">&#9632;</button>
+                    <button id="turn-right">&#9654;</button>
+                    <button id="spin-left">&#8634;</button>
+                    <button id="backward">&#9660;</button>                        
+                    <button id="spin-right">&#8635;</button>
+                </section>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <a href="http://">Documentation</a>
+    </footer>
+</body>
+</html>

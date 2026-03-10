@@ -1,0 +1,279 @@
+/* === HEADER === */
+header {
+    padding-left: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--bloc-gap);
+}
+
+header h1 {
+    color: var(--text-primary);
+    font-family: var(--text-font);
+    font-size: var(--text-size-xl);
+    line-height: var(--text-height-m);
+}
+
+header img {
+    width: 2%;
+}
+
+/* === MAIN === */
+main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-gap: var(--bloc-gap);
+    height: 90%;
+}
+
+/* === Bloc Left and Right === */
+.left,
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--bloc-gap);
+}
+
+.bottom-right {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: var(--bloc-gap);
+}
+
+/* === Sections === */
+/* Video */
+.stream {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: var(--bg-2);
+    border-radius: var(--corner-angle);
+    box-shadow: var(--shadow);
+}
+
+#camera-feed {
+    width: auto;
+    height: 95%;
+    border-radius: var(--corner-angle);
+    display: block;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.camera-overlay {
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-primary);
+    font-family: var(--text-font);
+}
+
+#camera-status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--danger-color);
+    animation: pulse 1.5s infinite;
+}
+
+.camera-label {
+    font-size: 1em;
+    font-weight: var(--text-weight-l);
+}
+
+/* Informations */
+.info {
+    width: auto;
+    height: 40%;
+    padding: 0% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    background-color: var(--bg-5);
+    border-radius: var(--corner-angle);
+    font-family: var(--text-font);
+    color: var(--text-secondary);
+    box-shadow: var(--shadow);
+}
+
+.info h2 {
+    font-size: var(--text-size-m);
+}
+
+.info table {
+    overflow-y: scroll;
+}
+
+.info td {
+    font-weight: var(--text-weight-xl);
+    text-shadow: 0px 0px 20px rgba(206,206,206,0.5);
+}
+
+.info-result {
+    color: var(--danger-color);
+}
+
+/* Detection */
+.detection {
+    width: auto;
+    height: 50%;
+    padding: 0% 5%;
+    background-color: var(--bg-6);
+    border-radius: var(--corner-angle);
+    box-shadow: var(--shadow);
+}
+
+.detection h2 {
+    font-size: var(--text-size-m);
+    font-family: var(--text-font);
+    color: var(--text-primary);
+}
+
+#history {
+    width: 100%;
+    height: 75%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#history li {
+    list-style: none;
+    font-family: var(--text-font);
+    color: var(--text-primary);
+    font-weight: var(--text-weight-s);
+}
+
+.detection p {
+    font-family: var(--text-font);
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+/* Map */
+.map {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg-4);
+    border-radius: var(--corner-angle);
+    box-shadow: var(--shadow);
+}
+
+.map h2 {
+    text-align: center;
+    line-height: var(--text-height-s);
+    font-size: var(--text-size-m);
+    font-family: var(--text-font);
+    color: var(--text-secondary);
+}
+
+#minimap-canvas {
+    display: block;
+    background: var(--bg-5);
+    width: 80%;
+    height: 80%;
+}
+
+.minimap-legend {
+    display: flex;
+    justify-content: center;
+    gap: 80%;
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+.legend-item {
+    font-family: "Roboto";
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+
+.legend-color.robot {
+    background: var(--bg-1);
+}
+
+.legend-color.obstacle {
+    background: var(--danger-color);
+}
+
+/* Controller */
+.controller {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--bg-3);
+    border-radius: var(--corner-angle);
+    box-shadow: var(--shadow);
+}
+
+.controller button {
+    width: 70%;
+    height: 70%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: clamp(1rem, 5vw, var(--text-size-xxl));
+    
+    border-radius: var(--corner-angle);
+    border: none;
+    
+    transition: all 0.2s ease;
+}
+
+.controller button:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-3);
+    transform: scale(0.95);
+}
+
+.controller button:active {
+    transform: scale(0.90);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease;
+}
+
+/* === FOOTER === */
+footer {
+    text-align: end;
+    padding: 1% 5%;
+}
+
+footer a {
+    color: var(--text-primary);
+    font-family: var(--text-font);
+}

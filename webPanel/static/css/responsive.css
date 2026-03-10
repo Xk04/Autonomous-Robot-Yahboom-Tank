@@ -1,0 +1,45 @@
+/* === RESPONSIVE === */
+
+/* Standard & Large screens */
+@media (min-width: 1024px) {
+    header img {
+        width: 40px;
+    }
+}
+
+/* Ecrans Moyens/Tablettes (768px - 1023px) */
+@media (max-width: 1023px) {
+    main {
+        grid-template-columns: 1fr; 
+        height: auto;
+    }
+
+    .bottom-right {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .controller {
+        width: 50%;
+        grid-gap: 10px;
+    }
+
+    .controller button {
+        font-size: var(--text-size-m);
+    }
+}
+
+/* Très petits écrans (Mobile - moins de 767px) */
+@media (max-width: 767px) {
+    .bottom-right {
+        flex-direction: column;
+    }
+
+    .map, .controller {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: var(--text-size-m);
+    }
+}
